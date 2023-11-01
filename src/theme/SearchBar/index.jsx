@@ -100,6 +100,9 @@ const Search = props => {
     loadAlgolia();
   }
 
+  const placeholder = props.placeholder || 'Search Ctrl+K';
+  const loadingPlaceholder = props.loadingPlaceholder || 'Loading...';
+
   return (
     <div className="navbar__search" key="search-box">
       <span
@@ -115,7 +118,7 @@ const Search = props => {
       <input
         id="search_input_react"
         type="search"
-        placeholder={indexReady ? 'Search Ctrl+K' : 'Loading...'}
+        placeholder={indexReady ? placeholder : loadingPlaceholder}
         aria-label="Search"
         className={clsx(
           "navbar__search-input",
